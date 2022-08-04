@@ -7,10 +7,15 @@ import { NovoUsuario } from './novo-usuario';
 })
 export class NovoUsuarioService {
   url: string = "http://localhost:3000/user/signup";
+  urlUsuario: string = "http://localhost:3000/user/exists/";
 
   constructor(private httpClient: HttpClient) { }
 
   cadastrarNovoUsuario(novoUsuario: NovoUsuario) {
     return this.httpClient.post(this.url, novoUsuario);
+  }
+
+  verificarUsuarioExistente(nomeUsuario: string) {
+    return this.httpClient.get(this.urlUsuario + nomeUsuario);
   }
 }
