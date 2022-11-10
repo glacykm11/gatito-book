@@ -8,7 +8,7 @@ const API = environment.apiURL;
   providedIn: 'root',
 })
 export class AutenticacaoService {
-  urlAutenticacao: string = `${API}user/login`;
+  urlAutenticacao: string = `${API}/user/login`;
 
   constructor(private httpClient: HttpClient) {}
 
